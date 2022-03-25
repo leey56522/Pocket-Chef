@@ -6,6 +6,13 @@ import styled from 'styled-components'
 import React from 'react'
 
 function Category() {
+
+    const [onHover, setOnHover] = React.useState(false);
+
+    const toggleHover = function() {
+        setOnHover(!onHover);
+    }
+
     return (
         <div id="cuisine-category">
             <SVLink to={'/cuisine/Chinese'}>
@@ -28,20 +35,29 @@ function Category() {
     )
 }
 
-const SVLink = styled.div`
+const SVLink = styled(NavLink)`
     background-color: #003049;
     color: white;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 2rem 0.7rem;
+    margin: 2rem 0.5rem;
     width: 6rem;
     height: 6rem;
-    transform: scale(0.8);
+    transform: scale(0.7);
     text-decoration: none;
+    cursor: pointer;
+
+    h4 {
+        font-size: 0.8rem;
+    }
+
+    svg {
+        font-size: 1.5rem;
+    }
 
     &:hover {
         background-color: #990000;
