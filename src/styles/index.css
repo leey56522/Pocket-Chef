@@ -8,20 +8,40 @@
 }
 
 body {
+    background-color: #f6f6f6;
+    color: #003049;
+}
+
+#exceptFooter {
     padding: 0 3rem;
-    background-color: #1a1a1a;
-    color: #ffffff;
+}
+
+/* Cuisine buttons */
+#cuisine-category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cuisine-button > h4 {
+    font-weight: 400;
 }
 
 /* Recipe cards */
+.picks {
+    font-size: 2rem;
+    margin: 3rem 0;
+}
+
 .card {
     border-radius: 1rem;
     overflow: hidden;
-    height: 22rem;
+    height: 18rem;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .card img {
-    height: 60%;
+    height: 70%;
     width: 100%;
     object-fit: cover;
 }
@@ -35,10 +55,22 @@ body {
 }
 
 .card-content h1 {
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: 400;
 }
 
-.card-footer {
-    
+#fav-heart {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: #f6f6f6;
+}
+
+/* Footer */
+footer {
+    margin-top: 5rem;
+    padding: 2rem;
+    color: #f6f6f6;
+    background-color: #003049;
 }

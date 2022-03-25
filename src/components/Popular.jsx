@@ -27,7 +27,7 @@ function Popular() {
     return (
         <div>
             <Wrapper>
-                <h3>Popular Picks</h3>
+                <h3 className="picks">Popular Picks</h3>
                 <Splide options={{perPage: 4, gap: '3rem', pagination: false, drag: 'free', rewind: true}}>
                 {popular.map(recipe => {
                     return (
@@ -38,7 +38,7 @@ function Popular() {
                                 diets={recipe.diets[1]}
                                 vegan={recipe.vegan}
                                 vegetarian={recipe.vegetarian}
-                                backgroundColor={'#c114c4'}
+                                backgroundColor={'#fcbf49'}
                             />
                         </SplideSlide>
                     )
