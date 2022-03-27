@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import React from 'react';
 import Card from './Card';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { Link } from 'react-router-dom';
 import '@splidejs/splide/dist/css/splide.min.css';
 
 function Veggie() {
@@ -32,7 +33,9 @@ function Veggie() {
             {veggie.map(recipe => {
                 return (
                     <SplideSlide>
+                        <Link to={'/recipe/' + recipe.id}>
                         <Card 
+                            key={recipe.id}
                             imgUrl={recipe.image} 
                             name={recipe.title} 
                             diets={recipe.diets[1]}
@@ -40,6 +43,7 @@ function Veggie() {
                             vegetarian={recipe.vegetarian}
                             backgroundColor={'#d43131'}
                         />
+                        </Link>
                     </SplideSlide>
                 )
             })}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Card from './Card';
+import { Link } from 'react-router-dom';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 
@@ -32,7 +33,9 @@ function Popular() {
                 {popular.map(recipe => {
                     return (
                         <SplideSlide>
+                            <Link to={'/recipe/' + recipe.id}>
                             <Card 
+                                key={recipe.id}
                                 imgUrl={recipe.image} 
                                 name={recipe.title} 
                                 diets={recipe.diets[1]}
@@ -40,6 +43,7 @@ function Popular() {
                                 vegetarian={recipe.vegetarian}
                                 backgroundColor={'#fcbf49'}
                             />
+                            </Link>
                         </SplideSlide>
                     )
                 })}
@@ -53,16 +57,5 @@ const Wrapper = styled.div`
     margin: 4rem 0rem;
 `
 
-// const Card = styled.div`
-//     border: 1px solid blue;
-//     height: 25rem;
-//     border-radius: 1rem;
-//     overflow: hidden;
-
-//     img {
-
-//         border-radius: 1rem;
-//     }
-// `
 
 export default Popular
