@@ -1,8 +1,7 @@
 import React from 'react';
-import Footer from '../components/Footer';
+import styled from 'styled-components'
 import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
-import styled from 'styled-components'
 
 function Cuisine() {
 
@@ -39,7 +38,6 @@ function Cuisine() {
                     )
                 })}
             </Grid>
-            <Footer />
         </div>
     )
 }

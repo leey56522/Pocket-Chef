@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@100;300;400;500;700;900&family=Shadows+Into+Light+Two&display=swap');
 
 *{
     margin: 0;
@@ -13,7 +13,97 @@ body {
 }
 
 #exceptFooter {
-    padding: 0 3rem;
+    padding: 0 7rem;
+}
+
+/* Navigation header */
+#nav-bar {
+    padding: 0.5rem 3vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #ae2012;
+}
+
+#cuisine-menu {
+    display: flex;
+    align-items: center;
+}
+
+/* Banner */
+#banner {
+    background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)), url('./banner-bg.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10rem 0rem;
+    padding-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+#banner-phrase {
+    color: white;
+    font-size: 4vw;
+    margin: 3rem 0;
+    font-family: 'Shadows Into Light Two', cursive;
+}
+
+#pick-cuisine-box {
+    color: white;
+    display: flex;
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    margin-right: 3rem;
+}
+
+#arrow {
+    margin-right: 0.5rem;
+}
+
+#pick-cuisine {
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 1.5rem;
+}
+
+/* Search bar */
+form {
+    margin: 0 auto;
+    position: relative;
+    width: 50%;
+}
+
+form > div {
+    width: 100%;
+    position: relative;
+}
+
+input {
+    border: none;
+    background: rgba(174, 32, 18, 0.8);
+    padding: 1rem 4rem;
+    border-radius: 0.3rem;
+    outline: none;
+    width: 100%;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: 'Shadows Into Light Two', cursive;
+}
+
+#search-icon {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(100%, -50%);
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 1rem;
 }
 
 /* Cuisine buttons */
@@ -34,29 +124,28 @@ body {
 }
 
 .card {
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     overflow: hidden;
     height: 18rem;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-}
-
-.card img {
-    height: 70%;
-    width: 100%;
-    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
 .card-content {
+    background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8));
     padding: 1rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    width: 100%;
 }
 
 .card-content h1 {
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     font-weight: 400;
+    color: #f6f6f6;
 }
 
 #fav-heart {
@@ -73,4 +162,10 @@ footer {
     padding: 2rem;
     color: #f6f6f6;
     background-color: #003049;
+}
+
+/* Elements */
+a {
+    text-decoration: none;
+    color: #003049;
 }

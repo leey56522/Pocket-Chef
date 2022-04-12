@@ -1,58 +1,32 @@
 import React from 'react'
-import styled from 'styled-components';
-import {FaSearch} from 'react-icons/fa';
+import { FaSearch } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
+// Search bar component
 function Search() {
 
     const [input, setInput] = React.useState('');
     const navigate = useNavigate();
 
+    // navigates to a searched page with input value
     const submitHandler= function(e) {
         e.preventDefault();
         navigate('/searched/' + input);
     }
 
+    // Detect changes as the input is being typed
     const changeInput = function(e) {
         setInput(e.target.value)
     }
 
     return (
-        <FormStyle onSubmit={submitHandler}>
+        <form onSubmit={submitHandler}>
             <div>
-                <FaSearch />
+                <FaSearch id="search-icon"/>
                 <input type="text" onChange={changeInput}/>
             </div>
-        </FormStyle>
+        </form>
     )
 }
-
-const FormStyle = styled.form`
-    margin: 0 auto;
-    position: relative;
-    width: 50%;
-
-    div {
-        width: 100%;
-        position: relative;
-    }
-
-    input {
-        border: none;
-        background: #003049;
-        padding: 1rem 3rem;
-        border-radius: 0.5rem;
-        outline: none;
-        width: 100%;
-        color: white;
-    }
-    svg {
-        position: absolute;
-        top: 50%;
-        left: 0%;
-        transform: translate(100%, -50%);
-        color: white;
-    }
-`
 
 export default Search
