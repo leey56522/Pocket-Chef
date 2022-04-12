@@ -5,22 +5,30 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { Link } from 'react-router-dom';
 import '@splidejs/splide/dist/css/splide.min.css';
 
+// Vegetarian component in the homepage
 function Veggie() {
 
     const [veggie, setVeggie] = useState([]);
 
     useEffect(function() {
-        getVeggie();
+        getVeggieTest();
     }, []);
 
+    // Grabs vegetarian dish data from Spoonacular API
     const getVeggie = async function() {
+        const response = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=3`);
+        const data = await response.json();
+        setVeggie(data.recipes);
+    }
+
+    // Used during development to avoid hitting daily API call limit
+    const getVeggieTest = async function() {
         const check = JSON.parse(localStorage.getItem('veggie'));
         if(check) {
             setVeggie(check)
         } else {
-            const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=4`);
-            const data = await api.json();
-            console.log(data);
+            const response = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=4`);
+            const data = await response.json();
             localStorage.setItem('veggie', JSON.stringify(data.recipes))
             setVeggie(data.recipes);
         }
@@ -38,10 +46,6 @@ function Veggie() {
                             key={recipe.id}
                             imgUrl={recipe.image} 
                             name={recipe.title} 
-                            diets={recipe.diets[1]}
-                            vegan={recipe.vegan}
-                            vegetarian={recipe.vegetarian}
-                            backgroundColor={'#d43131'}
                         />
                         </Link>
                     </SplideSlide>

@@ -53,6 +53,24 @@ body {
     font-family: 'Shadows Into Light Two', cursive;
 }
 
+#pick-cuisine-box {
+    color: white;
+    display: flex;
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    margin-right: 3rem;
+}
+
+#arrow {
+    margin-right: 0.5rem;
+}
+
+#pick-cuisine {
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 1.5rem;
+}
+
 /* Search bar */
 form {
     margin: 0 auto;
@@ -106,29 +124,28 @@ input {
 }
 
 .card {
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     overflow: hidden;
     height: 18rem;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-}
-
-.card img {
-    height: 70%;
-    width: 100%;
-    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
 .card-content {
+    background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8));
     padding: 1rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    width: 100%;
 }
 
 .card-content h1 {
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     font-weight: 400;
+    color: #f6f6f6;
 }
 
 #fav-heart {
